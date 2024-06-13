@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Путь к сигме</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roadtosigma-style.css') }}">
+</head>
+<body style="background-image: url('/static/images/bg4.jpg'); background-size: cover;">
+    <div class="header">
+        <div class="container">
+            <div class="header-line">
+                <div class="header-logo">
+                    <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logo.png') }}" width="100" height="100"></a>
+                </div>
+                <div class="nav">
+                    <a class="nav-item" href="{{ url_for('roadtosigma') }}">ПУТЬ К СИГМЕ</a>
+                    <a class="nav-item" href="{{ url_for('about') }}">О НАС</a>
+                    <a class="nav-item" href="{{ url_for('final') }}">ИТОГИ</a>
+                </div>
+                <div class="cart">
+                    {% if 'username' in session %}
+                        <a href="{{ url_for('profile', username=session['username']) }}">
+                            <img class="cart-img" src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart" width="30">
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('register') }}">
+                            <img class="cart-img" src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart" width="30">
+                        </a>
+                    {% endif %}
+                </div>
+                <div class = "phone">
+                    <div class="phone-holder">
+                        <div class="phone-img">
+                            <img src="{{ url_for('static', filename='images/phone.png') }}" width="30" height="30">
+                        </div>
+                    <div class="number"><a class="num" href="#"><b>+7-999-888-77-66</b></a></div>                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="path-to-sigma">
+        <div class="learning-block">
+            <h2 class="learning-title" onclick="toggleLearning('block1')">1. Первое занятие </h2>
+            <div class="hidden-info" id="block1">
+                <p>Для начала зарядимся цитатой великого человека, сооснователем этого курса:</p>
+    <blockquote>
+        <p>"Сначала я думал, что жить будет легко, но со временем я понял, что легко только после того, как посрал." - Джейсон Стетхэм</p>
+    </blockquote>
+
+    <p>У нас все коротко и по делу. Сегодня ты должен:</p>
+    <ul>
+        <li>- Разозлить тихий океан -</li>
+        <li>- Заставить солнце надеть солнечные очки -</li>
+        <li>- Поставь училке 2 за дз -</li>
+    </ul>
+    Думаю для вводного урока хватит, встретимся на следующем, новичок
+        </div>
+        
+        <div class="learning-block">
+            <h2 class="learning-title" onclick="toggleLearning('block2')">2. Второе занятие </h2>
+            <div class="hidden-info" id="block2"><p>Как обычно начнем наше занятие с цитаты: </p>
+                <blockquote>
+                    <p>"После кстати, идет информация которая ничерта не кстати." - Джейсон Стетхэм</p>
+                </blockquote>
+            
+                <p>Ну а теперь перейдем к заданиям которые ты должен сделать сегодня же. Читай и запоминай:</p>
+                <ul>
+                    <li>- Освободи статую свободы -</li>
+                    <li>- Напугай страх -</li>
+                    <li>- Проси милостыню у цыган -</li>
+                </ul>
+                Простые задания, не так ли? Так сделай их!</div>
+        </div>
+        <div class="learning-block">
+            <h2 class="learning-title" onclick="toggleLearning('block1')">3. Третье занятие </h2>
+            <div class="hidden-info" id="block1"><p>Сегодня у нас третий урок, зарядимся цитатой:</p>
+                <blockquote>
+                    <p>«Запомни, под хвостом каждого павлина, обычная попа петуха.» - Джейсон Стетхэм</p>
+                </blockquote>
+            
+                <p>Сегодня у нас легкий день, всего 2 задачи, но ты должен обязательно их выполнить.</p>
+                <ul>
+                    <li>- бери налоги с правительства -</li>
+                    <li>- заставь хлеб пойти за батей -</li>
+                </ul>
+                Не так уж и сложно, правда? Действуй!</div>
+        </div>
+    
+    <div class="learning-block">
+        <h2 class="learning-title" onclick="toggleLearning('block2')">4. Четвертое занятие </h2>
+        <div class="hidden-info" id="block2"><p>И наконец у нас долгождпнный последний урок, после которого вы наконец то сможете стать настоящим сигмой. Начнем с 2 цитат:</p>
+            <blockquote>
+                <p>«В жизни всегда есть две дороги: одна — первая, а другая — вторая.» - Джейсон Стетхэм</p>
+                <p>«На улицу сначала выхожу я, а потом солнце.» - Джейсон Стетхэм</p>
+            </blockquote>
+        
+            <p>Сегодня у нас очень насыщенный день, но если ты справишься, станешь настоящим самцом.</p>
+            <ul>
+                <li>- научи слепого языку жестов -</li>
+                <li>- согревайся холодом -</li>
+                <li>- высоси кровь у комара -</li>
+                <li>- чисти зубы наждачкой -</li>
+                <li>- заставь воздух дышать тобой -</li>
+
+            </ul>
+            Ну вот и конец сынок. Удачи на твоем тяжелом пути!
+        </div>
+    </div>
+    <script>
+                document.addEventListener("DOMContentLoaded", function() {
+        var infoBlocks = document.querySelectorAll('.hidden-info');
+        infoBlocks.forEach(function(block) {
+            block.style.display = "none";
+        });
+
+        var learningTitles = document.querySelectorAll('.learning-title');
+        learningTitles.forEach(function(title) {
+            title.addEventListener("click", function() {
+                var infoBlock = title.nextElementSibling;
+                if (infoBlock.style.display === "block") {
+                    infoBlock.style.display = "none";
+                } else {
+                    infoBlocks.forEach(function(block) {
+                        block.style.display = "none";
+                    });
+                    infoBlock.style.display = "block";
+                }
+            });
+        });
+    });
+   
+
+    </script>
+    
+</body>
+</html>

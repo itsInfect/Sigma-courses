@@ -1,0 +1,120 @@
+.history-title{
+    font-family: "Tinos", serif;
+    font-size: 54px;
+    font-weight: 400;
+    width: 444px;
+    text-align: center;
+    margin-top: -750px;
+}
+
+.header{
+    background-image: url(bg2.jpg);
+    height: 100vh;
+    background-size: cover;
+}
+
+.history-desc{
+    font-size: 16px;
+    width: 444px;
+    text-align: center;
+}
+
+.history{
+    margin-top: 200px;
+    margin-left: 70px;
+}
+
+.history-number{
+    display: flex;
+    width: 444px;
+    justify-content: center;
+    margin-top: 35px;
+    margin-left: 30px;
+}
+
+.number-item span{
+    display: block;
+}
+
+.number-item{
+    margin-right: 60px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.history-holder{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    margin: 0px 166px;
+} 
+
+body{
+    margin: 0;
+}
+
+.header-line{
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 350px;
+}
+
+.nav-item{
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 25px;
+    transition: color 0.2s linear;
+}
+
+.nav-item:hover{
+    color: red;
+}
+
+.num:hover{
+    color: red;
+}
+
+.header {
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.number, .text-phone {
+    font-size: 14px; 
+}
+
+.cart {
+    position: relative;
+    border-right: 1px solid black;
+    padding-right: 65px; 
+    height: 50px;
+    margin-top: -10px;
+      
+}
+
+.cart-img{
+    position: absolute;
+    top: 13px;
+    left: 15px;
+}
+
+.num{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: color 0.2s linear;
+}
+
+.nav-item, .cart, .phone {
+    margin: 0 15px; 
+}
+
+.header-down{
+    position: relative
+}
+

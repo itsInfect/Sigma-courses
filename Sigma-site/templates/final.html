@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Итоги</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/final-style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-line">
+                <div class="header-logo">
+                    <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logo.png') }}" width="100" height="100"></a>                   
+                </div>
+                <div class="nav">
+                    <a class="nav-item" href="{{ url_for('roadtosigma') }}">ПУТЬ К СИГМЕ</a>
+                    <a class="nav-item" href="{{ url_for('about') }}">О НАС</a>
+                    <a class="nav-item" href="{{ url_for('final') }}">ИТОГИ</a>
+                </div>
+                <div class="cart">
+                    {% if 'username' in session %}
+                        <a href="{{ url_for('profile', username=session['username']) }}">
+                            <img class="cart-img" src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart" width="30">
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('register') }}">
+                            <img class="cart-img" src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart" width="30">
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="phone">
+                    <div class="phone-holder">
+                        <div class="phone-img">
+                            <img src="{{ url_for('static', filename='images/phone.png') }}" width="30" height="30">
+                        </div>
+                        <div class="number"><a class="num" href="#"><b>+7-999-888-77-66</b></a></div>                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="zag">
+        <h1>По итогам курса у вас ...</h1>
+    </div>
+    <div class="im">
+        <div class="bezos">
+            <img src="{{ url_for('static', filename='images/bezos.jpg') }}" alt="" width="340">
+            
+            <h3>
+                Должно быть столько денег как у <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%B7%D0%BE%D1%81,_%D0%94%D0%B6%D0%B5%D1%84%D1%84" >Джеффа Безоса </a>
+            </h3>
+            
+        </div>
+        <div class="gog">
+            <img src="{{ url_for('static', filename='images/goggins.jpg') }}" alt="" width="340" height="240">
+            <h3>
+                Должна быть дисциплина как у <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%B3%D0%B3%D0%B8%D0%BD%D1%81,_%D0%94%D1%8D%D0%B2%D0%B8%D0%B4">Дэвид Гоггинса</a>
+            </h3>
+        </div>
+        <div class="arni">
+            <img src="{{ url_for('static', filename='images/arnold.jpg') }}" alt="" width="340" height="240">
+            <h3>
+                Должно быть тело как у <a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B2%D0%B0%D1%80%D1%86%D0%B5%D0%BD%D0%B5%D0%B3%D0%B3%D0%B5%D1%80,_%D0%90%D1%80%D0%BD%D0%BE%D0%BB%D1%8C%D0%B4"> Арнольда Шварценеггера</a> 
+            </h3>
+        </div>
+    </div> 
+</body>

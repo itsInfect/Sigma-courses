@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .credentials {
+            margin-top: 20px;
+        }
+        .credentials label {
+            font-weight: bold;
+        }
+        .credentials p {
+            margin: 5px 0;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать, {{ username }}!</h1>
+        <p>Это ваша страница профиля.</p>
+        <div class="credentials">
+            <h2>Ваши данные:</h2>
+            <p><label>Логин:</label> {{ username }}</p>
+            <p><label>Email:</label> {{ user['email'] }}</p>
+            <p><label>О себе:</label> {{ user['bio'] }}</p>
+            <p><label>Пароль:</label> <span id="password">***</span></p>
+            <button id="togglePassword" class="btn-secondary">Показать пароль</button>
+        </div>
+        <a href="{{ url_for('index') }}" class="btn">Вернуться на главную</a>
+        <a href="{{ url_for('edit_profile') }}" class="btn">Редактировать профиль</a>
+        <a href="{{ url_for('logout') }}" class="btn">Выйти</a>
+    </div>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            var passwordElement = document.getElementById('password');
+            var currentText = passwordElement.innerText;
+            if (currentText === '***') {
+                passwordElement.innerText = 'А вот и не покажем';
+                this.innerText = 'Скрыть пароль';
+            } else {
+                passwordElement.innerText = '***';
+                this.innerText = 'Показать пароль';
+            }
+        });
+    </script>
+</body>
+</html>
