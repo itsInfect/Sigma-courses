@@ -2,6 +2,6 @@ FROM python:3.12-alpine
 
 RUN pip install flask
 
-COPY . /sigma/sigma
-WORKDIR /sigma/sigma
+COPY . /Sigma/sigma
+WORKDIR /Sigma/sigma
 CMD ["python", "./work1.py"]
